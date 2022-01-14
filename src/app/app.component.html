@@ -1,0 +1,42 @@
+<div class="body">
+  <app-home> </app-home>
+  <app-input (search)="handleSearch($event)"></app-input>>
+  <div class="container__cards">
+    <div class="card" *ngFor="let manga of trueMangaArr">
+      <div class="cover">
+        <div
+          class="img__back"
+          style="background-image: url({{ manga.Personal.imagen }})"
+        ></div>
+      </div>
+
+      <div class="description" [ngSwitch]="manga.Datos.genero">
+        <h2 *ngSwitchCase="'shounen'" style="background-color: #FF000090">
+          {{ manga.Datos.genero }}
+        </h2>
+
+        <h2 *ngSwitchCase="'shoujo'" style="background-color:#C300AB90">
+          {{ manga.Datos.genero }}
+        </h2>
+
+        <h2 *ngSwitchCase="'josei'" style="background-color: #FE81EF90">
+          {{ manga.Datos.genero }}
+        </h2>
+
+        <h2 *ngSwitchCase="'seinen'" style="background-color: #F1C40F90">
+          {{ manga.Datos.genero }}
+        </h2>
+
+        <h2 *ngSwitchCase="null" style="background-color: #28374790">
+          No disponible
+        </h2>
+
+        <h1>{{ manga.Datos.titulo }}</h1>
+
+        <p>{{ manga.Datos.descripcion }}</p>
+
+        <input type="button" value="Leer Más" (click)="leer(manga)" />
+      </div>
+    </div>
+  </div>
+</div>
