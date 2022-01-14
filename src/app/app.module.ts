@@ -17,6 +17,7 @@ import { InputClearable } from './search/search.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     BottomSheetComponent,
     InputClearable,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

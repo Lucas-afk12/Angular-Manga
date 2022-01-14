@@ -40,6 +40,6 @@ export class AppComponent implements OnInit {
   }
 
   handleSearch(value: string) {
-    this.filerValue = value;
+    this.filterValue = value;
   }
 }
