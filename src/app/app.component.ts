@@ -11,7 +11,7 @@ import { TrueManga } from '../classes/Mangas';
 })
 export class AppComponent implements OnInit {
   trueMangaArr: TrueManga[] = [];
-  filterValue: string = '';
+  filterValue: string;
 
   constructor(private http: HttpClient, private bottomSheet: MatBottomSheet) {}
 
