@@ -6,5 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchPipe implements PipeTransform {
   transform(list: any[], args?: string): any {
     if (!args) return list;
+    // return (list.filter((manga) => ))
   }
 }
