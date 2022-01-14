@@ -11,6 +11,7 @@ import { TrueManga } from '../classes/Mangas';
 })
 export class AppComponent implements OnInit {
   trueMangaArr: TrueManga[] = [];
+  filterValue: string = '';
 
   constructor(private http: HttpClient, private bottomSheet: MatBottomSheet) {}
 
@@ -39,6 +40,6 @@ export class AppComponent implements OnInit {
   }
 
   handleSearch(value: string) {
-    console.log(value);
+    this.filerValue = value;
   }
 }
