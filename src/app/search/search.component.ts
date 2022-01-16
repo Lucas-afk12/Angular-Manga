@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 /**
  * @title Input with a clear button
@@ -13,9 +14,9 @@ export class InputClearable implements OnInit {
   value: any;
 
   ngOnInit() {
-    this.search.valueChanges.subscribe((value) =>
-      this.searchEmitter.emit(value)
-    );
+    this.search.valueChanges
+      .pipe(debounceTime(250))
+      .subscribe((value) => this.searchEmitter.emit(value));
   }
 
   search = new FormControl('');

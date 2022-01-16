@@ -1,6 +1,6 @@
-<div class="body">
+<div class="body" id="search">
   <app-home> </app-home>
-  <app-input (search)="handleSearch($event)"></app-input>>
+  <app-input (search)="handleSearch($event)"></app-input>
   <div class="container__cards">
     <div class="card" *ngFor="let manga of trueMangaArr | search: filterValue">
       <div class="cover">
